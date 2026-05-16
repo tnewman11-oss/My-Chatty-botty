@@ -1,30 +1,25 @@
 /* ============================================
    THEME — CHANGE THESE TO MAKE IT YOURS
-   ============================================
-   Try editing a few values, save the file, and
-   the page will refresh on its own. Or ask
-   GitHub Copilot Chat: "make this theme
-   green and purple". */
+   ============================================ */
 
 :root {
-  --bg:           #0a0a0a;   /* page background */
-  --surface:      #161616;   /* AI bubble + input box */
-  --border:       #2a2a2a;   /* subtle dividers */
-  --text:         #ededed;   /* main text */
-  --text-muted:   #8a8a8a;   /* subtitles, hints */
-  --accent:       #3b82f6;   /* user bubble + send button */
-  --accent-hover: #2563eb;
-  --user-bubble:  var(--accent);
-  --ai-bubble:    var(--surface);
+  --bg:           #000000;   /* black page background */
+  --surface:      rgba(20, 20, 20, 0.95);   /* AI bubble + input box */
+  --border:       #444444;   /* soft grey borders */
+  --text:         #f2f2f2;   /* main text */
+  --text-muted:   #888888;   /* subtitles, hints */
+  --accent:       #ff6600;   /* user bubble + send button */
+  --accent-hover: #cc5300;
+  --user-bubble:  #ff6600;
+  --ai-bubble:    #111111;
 
-  --radius:       12px;
-  --font: "Inter", system-ui, -apple-system, Segoe UI, Roboto, sans-serif;
+  --radius:       28px;
+  --font: "Comic Sans MS", "Comic Neue", cursive, system-ui;
   --max-width:    760px;
 }
 
 /* ============================================
-   Layout below — you CAN edit it, but the
-   variables above already recolor everything.
+   Layout below — cartoon background styling
    ============================================ */
 
 * {
@@ -35,6 +30,7 @@ html,
 body {
   margin: 0;
   padding: 0;
+  min-height: 100%;
   height: 100%;
   background: var(--bg);
   color: var(--text);
@@ -46,7 +42,34 @@ body {
 body {
   display: flex;
   flex-direction: column;
+  justify-content: flex-end;
   align-items: center;
+  position: relative;
+  overflow: hidden;
+  padding-top: 120px;
+}
+
+body::before {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 680px;
+  height: 680px;
+  transform: translate(-50%, -50%);
+  background-image: url("data:image/svg+xml;utf8,%3Csvg%20xmlns=%27http://www.w3.org/2000/svg%27%20viewBox=%270%200%20192.756%20192.756%27%3E%0A%3Cpath%20d=%27M74.63%2056.749L42.399%2040.096%2038.233%2019.28H17.646l9.607%2054.879%2021.393%2014.808H80.64l-6.01-32.218zm-6.484%203.122l.284%205.724-36.112-16.274-.473-5.866%2036.301%2016.416zm3.597%2015.848v5.44L34.59%2064.649l-.568-4.778%2037.721%2015.848z%27%20fill=%27%23bbbbbb%27/%3E%0A%3Cpath%20d=%27M144.914%2036.926l2.887-13.483C112.588%2011%2078.085%2010.527%2044.245%2022.118l2.319%2013.814%2047.613%2024.175%2050.737-23.181zm-49.412%207.049L75.198%2029.924h40.845L95.502%2043.975z%27%20fill=%27%23bbbbbb%27/%3E%0A%3Cpath%20d=%27M175.109%2021.077h-21.061l-4.971%2020.012-33.84%2016.416-5.963%2031.981h34.359l21.062-13.247%2010.414-55.162zm-15.38%2026.256v5.488l-36.396%2014.288v-5.44l36.396-14.336zm-3.883%2015.66v4.92L118.6%2083.242V77.28l37.246-14.287zM41.879%20102.26L40.27%2089.534l-11.928-7.57%204.639%2073.093%2028.397%2014.807.285-55.115-19.784-12.489zM67.342%20171.71l5.49%203.879%207.289-24.175h28.35l7.525%2023.892%206.248-3.36v-57.197l-12.732-11.732v39.266H80.641l-.52-39.266-12.779%2011.732v56.961z%27%20fill=%27%23bbbbbb%27/%3E%0A%3Cpath%20d=%27M81.682%2060.627l4.402%2026.777v49.959h17.465V86.884l4.922-26.257-14.294%206.009-12.495-6.009zM83.765%20156.618l-5.727%2022.377h32.798l-6.529-22.377H83.765zM162.852%2083.525l-13.538%209.368-.519%209.887-21.061%2012.727v55.398l29.438-12.963%205.68-74.417z%27%20fill=%27%23bbbbbb%27/%3E%0A%3Cpath%20d=%27M40.27%2089.534l-11.928-7.569%204.639%2073.092%2028.397%2014.808.285-55.115-19.784-12.49-1.609-12.726zm113.779-68.457l-4.971%2020.012-33.84%2016.416-5.963%2031.981h34.359l21.062-13.247%2010.412-55.163h-21.059v.001zm1.797%2046.836L118.6%2083.242V77.28l37.246-14.287v4.92zm3.883-15.092l-36.396%2014.288v-5.44l36.396-14.335v5.487zm-10.415%2040.072l-.52%209.888-21.061%2012.727v55.398l29.438-12.963%205.68-74.417-13.537%209.367zM68.146%2059.871L31.845%2043.455l.473%205.866L68.43%2065.595l-.284-5.724zm76.768-22.945L94.177%2060.107%2046.564%2035.932l-2.319-13.814C78.085%2010.527%20112.588%2011%20147.801%2023.443l-2.887%2013.483zM71.743%2075.719L34.022%2059.871l.568%204.778L71.743%2081.16v-5.441zm14.341%2011.685v49.959h17.464V86.884l4.922-26.257-14.293%206.009-12.495-6.009%204.402%2026.777zM74.63%2056.749l6.011%2032.265H48.647L27.254%2074.158l-9.607-54.879h20.587L42.4%2040.095l32.23%2016.654zm20.872-12.774l20.541-14.051H75.198l20.304%2014.051zM67.342%20171.71v-56.961l12.779-11.732.521%2039.267h28.871v-39.267l12.732%2011.732v57.197l-6.248%203.359-7.525-23.892h-28.35l-7.289%2024.175-5.491-3.878zm10.696%207.285h32.798l-6.529-22.377H83.765l-5.727%2022.377z%27%20fill=%27none%27%20stroke=%27333%27%20stroke-width=%271.314%27%20stroke-linecap=%27round%27/%3E%0A%3C/svg%3E");
+  background-size: contain;
+  background-repeat: no-repeat;
+  opacity: 0.12;
+  pointer-events: none;
+}
+
+body::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(circle at center, rgba(255,255,255,0.05), transparent 45%);
+  pointer-events: none;
 }
 
 .app-header {
@@ -54,19 +77,24 @@ body {
   max-width: var(--max-width);
   padding: 32px 24px 16px;
   text-align: center;
+  position: relative;
+  z-index: 1;
 }
 
 .app-title {
   margin: 0;
-  font-size: 28px;
+  font-size: 36px;
   font-weight: 700;
-  letter-spacing: -0.02em;
+  letter-spacing: -0.03em;
+  text-transform: uppercase;
+  color: #000000;
+  text-shadow: 2px 2px 0 rgba(255, 255, 255, 0.8), 3px 3px 0 rgba(0, 0, 0, 0.7);
 }
 
 .app-subtitle {
-  margin: 4px 0 0;
+  margin: 6px 0 0;
   color: var(--text-muted);
-  font-size: 14px;
+  font-size: 15px;
 }
 
 .chat {
@@ -77,6 +105,18 @@ body {
   flex-direction: column;
   padding: 0 24px 24px;
   min-height: 0;
+  position: relative;
+  z-index: 1;
+}
+
+.chat::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: 42px;
+  background: radial-gradient(circle at 20% 20%, rgba(255,255,255,0.9), transparent 22%),
+              radial-gradient(circle at 80% 30%, rgba(255,255,255,0.85), transparent 18%);
+  pointer-events: none;
 }
 
 .chat-messages {
@@ -85,13 +125,13 @@ body {
   padding: 16px 0;
   display: flex;
   flex-direction: column;
-  gap: 12px;
+  gap: 14px;
 }
 
 .message {
   display: flex;
   width: 100%;
-  animation: msg-in 0.18s ease-out;
+  animation: msg-in 0.22s ease-out;
 }
 
 .message-user {
@@ -104,83 +144,97 @@ body {
 
 .message-bubble {
   max-width: 80%;
-  padding: 12px 16px;
+  padding: 16px 20px;
   border-radius: var(--radius);
   white-space: pre-wrap;
   word-wrap: break-word;
+  border: 4px solid var(--border);
+  box-shadow: 0 16px 24px rgba(0, 0, 0, 0.12);
 }
 
 .message-user .message-bubble {
-  background: var(--user-bubble);
+  background: linear-gradient(135deg, #ffb36d 0%, #ff7a59 100%);
   color: white;
-  border-bottom-right-radius: 4px;
+  border-color: #000000;
+  border-bottom-right-radius: 12px;
 }
 
 .message-ai .message-bubble {
   background: var(--ai-bubble);
-  border: 1px solid var(--border);
-  border-bottom-left-radius: 4px;
+  border-color: #ff4500;
+  border-bottom-left-radius: 12px;
 }
 
 .message-ai.is-streaming .message-bubble::after {
   content: "█";
-  margin-left: 2px;
+  margin-left: 4px;
   animation: cursor-blink 1s steps(1) infinite;
   color: var(--text-muted);
 }
 
 .composer {
   display: flex;
-  gap: 8px;
-  padding-top: 12px;
-  border-top: 1px solid var(--border);
+  gap: 10px;
+  padding-top: 16px;
+  border-top: 1px dashed rgba(255, 255, 255, 0.35);
 }
 
 .composer-input {
   flex: 1;
-  padding: 12px 14px;
+  padding: 14px 18px;
   background: var(--surface);
-  border: 1px solid var(--border);
-  border-radius: var(--radius);
+  border: 3px solid rgba(0, 0, 0, 0.35);
+  border-radius: calc(var(--radius) + 4px);
   color: var(--text);
   font: inherit;
   outline: none;
-  transition: border-color 0.15s;
+  transition: border-color 0.15s, transform 0.15s;
 }
 
 .composer-input:focus {
   border-color: var(--accent);
+  transform: translateY(-1px);
 }
 
 .composer-send {
-  padding: 0 20px;
+  padding: 0 22px;
   background: var(--accent);
   color: white;
   border: none;
-  border-radius: var(--radius);
+  border-radius: calc(var(--radius) + 4px);
   font: inherit;
-  font-weight: 600;
+  font-weight: 700;
   cursor: pointer;
-  transition: background 0.15s;
+  transition: background 0.15s, transform 0.15s;
 }
 
 .composer-send:hover:not(:disabled) {
   background: var(--accent-hover);
+  transform: translateY(-1px);
 }
 
 .composer-send:disabled {
-  opacity: 0.5;
+  opacity: 0.55;
   cursor: not-allowed;
 }
 
 @keyframes msg-in {
   from {
     opacity: 0;
-    transform: translateY(4px);
+    transform: translateY(10px) scale(0.98);
   }
   to {
     opacity: 1;
-    transform: translateY(0);
+    transform: translateY(0) scale(1);
+  }
+}
+
+@keyframes matrix-fall {
+  from {
+    background-position: 8% 14%, 0 0, 20% 0, 40% 0, 24% 22%, 68% 12%, 56% 28%, 84% 24%, 14% 58%, 42% 52%, 72% 48%, 90% 60%, 18% 78%, 34% 12%, 62% 72%, 48% 14%, 28% 62%, 86% 76%, 12% 40%, 52% 86%, 44% 90%, center;
+  }
+  to {
+    background-position: 8% 14%, 0 420px, 20% 380px, 40% 520px, 24% 22%, 68% 12%, 56% 28%, 84% 24%, 14% 58%, 42% 52%, 72% 48%, 90% 60%, 18% 78%, 34% 12%, 62% 72%, 48% 14%, 28% 62%, 86% 76%, 12% 40%, 52% 86%, 44% 90%, center;
   }
 }
 
